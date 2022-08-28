@@ -10,6 +10,8 @@
 }
 body{
     font-family: 'Open Sans', sans-serif;
+}
+html{
     scroll-behavior: smooth;
 }
 ul{
@@ -38,6 +40,44 @@ ul{
     .container{
         width: 1170px;
     }
+}
+.specialHeader{
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 40px;
+    font-weight: normal;
+    position: relative;
+}
+.specialHeader::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 1.5px;
+    width: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+}
+.specialHeader::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -37px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+}
+.specialHeader + p{
+    text-align: center;
+    width: 550px;
+    margin: 0 auto 100px;
+    font-size: 16px;
+    line-height: 2;
+    color: #777;
+    max-width: 100%;
 }
 /* end global style */
 /* style for header */
@@ -102,11 +142,13 @@ header i:nth-of-type(2){
     margin-left: 30px;
     border-left: 2px solid white;
     padding-left: 20px;
+    cursor: pointer;
 }
 header i:first-of-type{
     color: white;
     font-size: 22px;
     display: none;
+    cursor: pointer;
 }
 @media (max-width:767px){
     header ul{
@@ -140,7 +182,7 @@ header i:first-of-type{
 .landing .landContainer{
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     position: relative;
 }
 .landing .text{
@@ -181,6 +223,7 @@ header i:first-of-type{
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
+    cursor: pointer;
 }
 .landContainer i:nth-of-type(2){
     position: absolute;
@@ -190,6 +233,7 @@ header i:first-of-type{
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
+    cursor: pointer;
 }
 @media (max-width:767px) {
     .landContainer i:first-of-type,.landContainer i:nth-of-type(2){
@@ -216,9 +260,234 @@ header i:first-of-type{
     border-radius: 50%;
     border: 1px solid white;
     margin-left: 10px;
+    cursor: pointer;
 }
 .landing ul li.bold{
     background-color: var(--color-b);
     border: none;
 }
 /* end style for landing */
+/* style for services */
+.services{
+    padding: 100px 0;
+}
+.servContent{
+    display: flex;
+    flex-wrap: wrap;
+}
+.servBlock:first-of-type,.servBlock:nth-of-type(3){
+    margin-right: 40px;
+}
+.servBlock:first-of-type,.servBlock:nth-of-type(2){
+    margin-bottom: 60px;
+}
+.servBlock{
+    width: calc(50% - 40px);
+    display: flex;
+}
+.servBlock h3{
+    
+    color: var(--color-b);
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+.servBlock p{
+    margin-left: 50px;
+    line-height: 2;
+    color: #777;
+}
+@media (max-width:991px) {
+    .servBlock:not(.servBlock:nth-of-type(4)){
+        margin-bottom: 60px;
+    }
+    .servBlock{
+        width: 100%;
+    }
+}
+@media (max-width:767px) {
+    .servBlock{
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px !important;
+        margin-right: 0 !important;
+    }
+    .servBlock i{
+        margin-bottom: 30px;
+    }
+    .servBlock p{
+        margin-left: 0;
+    }
+    .servBlock h3{
+        margin-left: 0;
+    }
+}
+/* end style for services */
+/* style for design */
+.design{
+    height: 600px;
+    overflow: hidden;
+    background-image: url("../image/design-features.jpg");
+    background-size: cover;
+    position: relative;
+    display: flex;
+    padding: 100px 0;
+    align-items: center;
+}
+.design::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    top: 0;
+}
+.design .img{
+    z-index: 1;
+    flex-grow: 1;
+    text-align: center;
+}
+.design .img img{
+    position: relative;
+    top: 150px;
+}
+.design .text{
+    z-index: 1;
+    color: white;
+    background-color: var(--color-dark-b);
+    padding: 50px;
+    flex-grow: 1;
+    height: fit-content;
+}
+@media (max-width:767px) {
+    .design .img{
+        display: none;
+    }
+}
+.design h2{
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: normal;
+}
+.design ul li{
+    padding: 15px 0;
+}
+.design ul li i{
+    margin-right: 20px;
+}
+/* end style for design */
+/* style for portfolio */
+.portfolio{
+    padding: 100px 0;
+}
+.portfolio ul{
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+}
+.portfolio ul li{
+    padding: 10px;
+    cursor: pointer;
+}
+.portfolio ul li.activeButton{
+    color: white;
+    background-color: var(--color-b);
+}
+.portfolio .imgbox{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio .box{
+    width: 25%;
+    position: relative;
+    overflow: hidden;
+}
+@media (max-width:1199px) {
+    .portfolio .box{
+        width: 50%;
+    }
+}
+@media (max-width:767px) {
+    .portfolio .box{
+        width: 100%;
+    }
+}
+.portfolio img{
+    width: 100%;
+    transition: 0.3s;
+}
+.portfolio .caption{
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    bottom: -100px;
+    padding: 20px;
+    transition: 0.3s;
+}
+.portfolio .box:hover img{
+    transform: scale(1.1)rotate(5deg);
+}
+.portfolio .box:hover .caption{
+    bottom: 0;
+}
+.portfolio .caption p{
+    margin-bottom: 10px;
+}
+.portfolio .caption span{
+    color: var(--color-b);
+}
+.portfolio a{
+    text-decoration: none;
+    display: block;
+    margin: 30px auto;
+    width: fit-content;
+    padding: 15px 20px;
+    background-color: var(--color-b);
+    color: white;
+}
+/* end style for portfolio */
+/* style for video */
+.video{
+    position: relative;
+}
+.video::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+.video video{
+    width: 100%;
+}
+.video .text{
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    background-color: var(--color-dark-b);
+    text-align: center;
+    z-index: 1;
+}
+.video h2{
+    color: white;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+.video p{
+    color: white;
+    margin-bottom: 30px;
+}
+.video button{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: black;
+    cursor: pointer;
+}
+/* end style for video */
