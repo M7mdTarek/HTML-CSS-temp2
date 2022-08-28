@@ -47,6 +47,7 @@ ul{
     font-size: 40px;
     font-weight: normal;
     position: relative;
+    text-transform: uppercase;
 }
 .specialHeader::before{
     content: "";
