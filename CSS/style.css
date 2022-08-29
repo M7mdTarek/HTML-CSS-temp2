@@ -263,9 +263,9 @@ header i:first-of-type{
     margin-left: 10px;
     cursor: pointer;
 }
-.landing ul li.bold{
+li.bold{
     background-color: var(--color-b);
-    border: none;
+    border-color:  var(--color-b);
 }
 /* end style for landing */
 /* style for services */
@@ -573,3 +573,203 @@ header i:first-of-type{
     font-size: 14px;
 }
 /* end style for stats */
+/* style for skills */
+.ourSkills{
+    padding: 100px 0;
+}
+.ourSkills .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ourSkills img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+.ourSkills h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+.ourSkills h3 + p{
+    text-align: center;
+    margin-bottom: 60px;
+    color: #777;
+    line-height: 2;
+}
+.ourSkills .test {
+    width: 45%;
+    position: relative;
+}
+.ourSkills .content{
+    margin-bottom: 30px;
+    display: flex;
+}
+.ourSkills .text{
+    line-height: 1.8;
+    border-bottom: 1px solid #ccc;
+} 
+.ourSkills .text p{
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    text-align: right;
+} 
+.ourSkills ul{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 50px 0;
+}
+.ourSkills ul li{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    margin-right: 10px;
+}
+.ourSkills .skills {
+    width: 45%;
+}
+@media (max-width:991px) {
+    .ourSkills .test , .ourSkills .skills {
+        width: 100%;
+    }
+}
+@media (max-width:767px) {
+    .ourSkills .test .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .ourSkills .test .content img{
+        margin: 0 auto 20px;
+    }
+}
+.ourSkills .skills h4{
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+.ourSkills .skills .progress{
+    height: 30px;
+    background-color: #dedadc;
+    margin-bottom: 40px;
+    border-radius: 5px;
+}
+.ourSkills .skills .progress span{
+    height: 100%;
+    background-color: var(--color-b);
+    display: block;
+    border-radius: 5px;
+}
+.ourSkills .skills .progress:first-of-type span 
+, .ourSkills .skills .progress:nth-of-type(2) span{
+    width: 90%;
+    position: relative;
+}
+.ourSkills .skills .progress:nth-of-type(3) span{
+    width: 80%;
+    position: relative;
+}
+.ourSkills .skills .progress:nth-of-type(4) span{
+    width: 70%;
+    position: relative;
+}
+.ourSkills .skills .progress span::after{
+    content: attr(progress);
+    position: absolute;
+    color: white;
+    background-color: black;
+    width: 40px;
+    padding: 4px 0;
+    border-radius: 4px;
+    text-align: center;
+    right: 0;
+    transform: translateX(50%);
+    top: -40px;
+}
+.ourSkills .skills .progress span::before{
+    content: "";
+    position: absolute;
+    border-width: 8px;
+    border-style: solid;
+    border-color: black transparent transparent ;
+    right: 0;
+    transform: translateX(50%);
+    top: -14px;
+}
+/* end style for skills */
+/* style for quote */
+.quote{
+    padding: 100px 0;
+    background-image: url("../image/quote.jpg");
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+.quote::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.quote .container{
+    position: relative;
+    z-index: 2;
+}
+.quote q{
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: block;
+}
+/* end style for quote */
+/* style for footer */
+footer{
+    padding: 50px 0;
+    background-size: cover;
+    background-image: url("../image/subscribe.jpg");
+    position: relative;
+    color: white;
+}
+footer::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+footer .container{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+footer img{
+    margin-bottom: 20px;
+}
+footer p:first-of-type{
+    margin: 20px auto;
+    width: fit-content;
+    font-size: 22px;
+    border-bottom: 1px solid white;
+    padding: 20px;
+}
+footer .social i{
+    padding: 10px 15px;
+    color: white;
+    font-size: 30px;
+}
+footer .copyright{
+    margin-top: 60px;
+}
+footer .copyright span{
+    color: var(--color-b);
+    font-weight: bold;
+}
+/* end style for footer */
